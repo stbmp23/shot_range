@@ -28,5 +28,8 @@ Rake::TestTask.new(:test) do |t|
   t.verbose = false
 end
 
+require 'rspec/core/rake_task'
 
-task default: :test
+RSpec::Core::RakeTask.new(:spec)
+
+task default: :spec
