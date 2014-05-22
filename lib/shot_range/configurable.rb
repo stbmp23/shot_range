@@ -3,13 +3,13 @@ require 'yaml'
 module ShotRange
   module Configurable
     LOGFILE_NAME = "shot_range.log"
-    PROFILER_CONFIG_YAML = "rails_profiler.yaml"
+    PROFILER_CONFIG_YAML = "shot_range.yml"
 
     attr_reader :logger, :output
 
     def setup!
-      self.logger = :fluentd
-      self.output = Rails.root.join("log")
+      self.logger = :logger unless self.logger
+      self.output = Rails.root.join("log") unless self.output
       load_yaml
       ShotRange::Logger.create_logger
     end

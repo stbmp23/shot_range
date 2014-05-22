@@ -17,11 +17,11 @@ module ShotRange
       when :file
         self.write_file(text)
       when :fluentd
-        @logger.post("log", text)
+        @logger.post("access_log", text)
       end
     end
 
-    def self.create_logger(tag = "rails_profiler")
+    def self.create_logger(tag = "shot_range")
       if ShotRange.logger == :fluentd
         @logger = ::Fluent::Logger::FluentLogger.new(tag)
       end
