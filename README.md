@@ -1,8 +1,8 @@
-= ShotRange
+# ShotRange
 
 Simple profiler for rails.
 
-== Instllation
+## Instllation
 
 ```
 git clone https://github.com/stbmp23/shot_range
@@ -10,7 +10,7 @@ cd shot_range
 rake install
 ```
 
-=== Fluentd
+### Fluentd
 
 shot_range logger use fluentd. add match pattern to your fluentd configuration file.
 
@@ -20,7 +20,7 @@ shot_range logger use fluentd. add match pattern to your fluentd configuration f
 </match>
 ```
 
-=== Output
+### Output
 
 Default output is RAILS_ROOT/log/shot_range.log, if want to use fluentd, add this code to config/application.rb
 
