@@ -1,14 +1,21 @@
 # Shot Range configurations
-#
-# logger - logger type
-#   fluentd - fluentd use to log ouput
-#   logger  - Rails default logger use
-#   file    - output to file
-# output - file path
+common: &default_settings
+
+  # Output log type.
+  #   file    - output to file
+  #   fluentd - fluentd use to log ouput
+  #   logger  - Rails default logger use
+  logger: file
+
+  # Path to output log, if use logger type file
+  #   default: RAILS_ROOT/log/shot_range.log
+  # output: path/to/logfile
+
+test:
+  <<: *default_settings
+
 development:
-  logger: fluentd
-  output: # path/to/logfile
+  <<: *default_settings
 
 production:
-  logger: fluentd
-  output: # path/to/logfile
+  <<: *default_settings
