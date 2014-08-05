@@ -1,7 +1,13 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'shot_range'
+$LOAD_PATH.unshift File.dirname(__FILE__)
 
-require 'rspec/autorun'
+begin
+  require 'rails'
+rescue LoadError
+end
+
+require 'bundler/setup'
+Bundler.require
 
 RSpec.configure do |config|
 end
