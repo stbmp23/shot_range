@@ -9,6 +9,13 @@ end
 require 'bundler/setup'
 Bundler.require
 
+if defined? Rails
+  ENV["RAILS_ENV"] = "test"
+  require File.expand_path("../../test/dummy/config/environment.rb", __FILE__)
+
+  require 'rspec/rails'
+end
+
 RSpec.configure do |config|
 end
 
