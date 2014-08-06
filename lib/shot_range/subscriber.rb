@@ -6,9 +6,7 @@ module ShotRange
     instance_eval { alias :reset! :initialize! }
 
     def self.push_event(event)
-      if self.subscribe?(event.name)
-        @events << event
-      end
+      @events << event if self.subscribe?(event.name)
     end
 
     def self.events
