@@ -22,3 +22,7 @@ end
 def fixture(file)
   File.new(File.expand_path("./spec/fixtures/" + file))
 end
+
+def fixture_yaml(file)
+  YAML.load_file(File.expand_path("./spec/fixtures/" + file))
+end

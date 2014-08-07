@@ -38,9 +38,13 @@ describe ShotRange::Configurable do
   describe ".load_yaml" do
     context "when yaml file exist" do
       it "set new logger" do
+        config.send(:load_yaml)
+        expect(config.logger).to eq :file
       end
 
       it "set new output" do
+        config.send(:load_yaml)
+        expect(config.output).to eq "/tmp/shot_range.log"
       end
     end
 
